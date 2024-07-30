@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor with Python Execution</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .CodeMirror {
+            height: 300px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        #output {
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 150px;
+            overflow-y: auto;
+            background-color: #f0f0f0;
+            font-family: monospace;
+        }
+        #comments {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 150px;
+            overflow-y: auto;
+        }
+        #commentInput {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="codeEditor"></div>
+    <button onclick="runCode()">Run Code</button>
+    <h2>Output</h2>
+    <pre id="output"></pre>
+    <h2>Comments</h2>
+    <div id="comments"></div>
+    <input type="text" id="commentInput" placeholder="Add a comment...">
+    <button onclick="addComment()">Add Comment</button>
+
+    <script>
+        let editor = CodeMirror(document.getElementById("codeEditor"), {
+            mode: "python",
+            theme: "monokai",
+            lineNumbers: true
+        });
+
+        function runCode() {
+            let code = editor.getValue();
+            fetch('http://localhost:8000/run', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({code: code}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("output").textContent = data.output;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                document.getElementById("output").textContent = 'Error: ' + error;
+            });
+        }
+
+        function addComment() {
+            let comment = document.getElementById("commentInput").value;
+            if (comment) {
+                let commentsDiv = document.getElementById("comments");
+                commentsDiv.innerHTML += `<p>${comment}</p>`;
+                document.getElementById("commentInput").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
