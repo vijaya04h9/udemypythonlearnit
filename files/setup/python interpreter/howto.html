@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 2px 5px;
+            font-family: monospace;
+        }
+        .note {
+            background-color: #ffffd9;
+            border-left: 5px solid #ffeb3b;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .note h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Setup Instructions</h1>
+    <ol>
+        <li>Save the HTML code to a file named <code>index.html</code>.</li>
+        <li>Save the Python server code to a file named <code>server.py</code>.</li>
+        <li>Install Flask and Flask-CORS if you haven't already:
+            <pre><code>pip install flask flask-cors</code></pre>
+        </li>
+        <li>Run the Python server:
+            <pre><code>python server.py</code></pre>
+        </li>
+        <li>Open the <code>index.html</code> file in your web browser.</li>
+    </ol>
+    <p>Now you can type Python code in the editor, click "Run Code", and see the output displayed in the "Output" section below.</p>
+
+    <div class="note">
+        <h3>Please note:</h3>
+        <ul>
+            <li>This setup runs a local server, which executes Python code sent from the browser. Be cautious about the code you run, as it has the same access as any Python script you'd run on your machine.</li>
+            <li>The server uses your default Python interpreter to execute the code.</li>
+            <li>For demonstration purposes, this server doesn't have any security measures. In a production environment, you'd want to add authentication and code execution limits.</li>
+        </ul>
+    </div>
+</body>
+</html>
