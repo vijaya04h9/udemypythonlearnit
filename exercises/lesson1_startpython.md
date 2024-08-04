@@ -28,6 +28,9 @@ Welcome, Python developer. This guide will walk you through setting up a compreh
    - `import sys; print(sys.version)`
    - `exit()` to close the REPL
 
+
+
+
 ## Unit 2: Version Control Setup
 
 ### Task 2.1: Install Git
