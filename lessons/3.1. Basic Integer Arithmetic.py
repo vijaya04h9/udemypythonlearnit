@@ -15,17 +15,27 @@ fruits_left = total_fruits - fruits_eaten
 print("Fruits left: ", fruits_left)
 print("\n")
 
-# Shopping Calculator
-print("Running 'Shopping Calculator App':")
-wallet = 50  # You start with 50$
-# Buy Some Items
-book = 15
-snack = 5
-drink = 3
-# Calculate total spent
-total_spent = book + snack + drink
-# Calculate remaining money
-money_left = wallet - total_spent
+# Integer VS Float
+print(type(4 + 2))
+print(type(4 - 2))
+print(type(4 * 2))
 
-print("You spent in $", total_spent)
-print("You have in $", money_left, "left")
+
+# The Devision Surprise
+# The / operator always gives a float.
+print(type(4 / 2))
+print(type(4 / 3))
+
+# Exercise exmaple with devision
+print(12 / 3)  # a)4 b)-4 c)4.0 d)-4.0
+
+# Integer Division
+# The // operator divides and rounds down (it's called 'floor devision') to the nearest integer. 
+print(12 // 3)
+print(type(12 // 3))
+
+# Watch out for negative numbers!
+print(10 // 3)  # The output is: 3
+print(-10 // 3)  # The output is: -4 (not -3)
+
+
