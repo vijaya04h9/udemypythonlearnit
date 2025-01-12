@@ -16,7 +16,7 @@ print('Guido van Rossumm once said, "Python is an experiment in how much freedom
 
 
 # 3. Use escape characters to create a formatted list.
-print("The Zen of Python includes:\n\t1. Beutiful is better than ugly.\n\t2. Explicit is better than implicit.\n\t3. Simple is better than complex.\n\t4. Complex is petter than complicated.\n\t5. Readability counts.")
+print("The Zen of Python includes:\n\t1. Beutiful is better than ugly.\n2. Explicit is better than implicit.\n\t3. Simple is better than complex.\n\t4. Complex is petter than complicated.\n\t5. Readability counts.")
 
 
 # 4. Combine different types of data (strings and numbers) in one print statement.
