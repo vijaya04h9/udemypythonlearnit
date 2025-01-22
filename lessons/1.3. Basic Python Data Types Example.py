@@ -1,6 +1,6 @@
 # Personal information
 name = "Helen"  # Str
-age = 27  # Int
+age = 20  # Int
 height_meters = 1.6  # Float
 is_student = False   # Boolean
 
