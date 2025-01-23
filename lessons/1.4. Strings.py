@@ -31,4 +31,4 @@ print(chant)  # Output: 'AliceAliceAlice'
 # Using String Methods
 print(greeting.upper())  # Output: HELLO, WORLD!
 print(name.lower())  # Output: alice
-print(name.replace('l','x'))  # Output: Axice
+print(name.replace('l','i'))  # Output: Axice
